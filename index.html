@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JW Knitique - Handmade Hats for Horse Camp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>JW Knitique</h1>
+        <p>Handmade hats to fund our horse camp dreams! 🐴</p>
+    </header>
+
+    <main>
+        <section class="about">
+            <h2>Our Story</h2>
+            <p>We're two sisters who love knitting and dream of horse camp! Each hat is handmade with love. Every purchase helps us get closer to our goal!</p>
+        </section>
+
+        <section class="hats-gallery">
+            <h2>Our Hat Collection</h2>
+            
+            <!-- Example available hat -->
+            <div class="hat available">
+                <img src="placeholder-hat.jpg" alt="Wild Horse Hat" class="hat-image">
+                <div class="hat-info">
+                    <h3>Wild Horse</h3>
+                    <p>Adventurous spirit in deep brown with leather accent</p>
+                    <span class="price">$30</span>
+                    <button onclick="orderHat('Wild Horse')" class="order-btn">I want Wild Horse!</button>
+                </div>
+            </div>
+
+            <!-- Example sold hat -->
+            <div class="hat sold">
+                <img src="placeholder-hat.jpg" alt="Juniper Hat" class="hat-image">
+                <div class="hat-info">
+                    <h3>Juniper</h3>
+                    <p>Cozy winter vibes in forest green</p>
+                    <span class="sold-badge">SOLD - Thank you!</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="payment">
+            <h2>Support Our Horse Camp Dream</h2>
+            <p>Pay with Venmo or send us an order!</p>
+            <img src="venmo-qr.jpg" alt="Venmo QR Code" class="venmo-qr">
+            <p><strong>Venmo:</strong> @your-venmo-handle</p>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact">
+            <h2>Order a Hat</h2>
+            <form name="hat-orders" method="POST" netlify netlify-honeypot="bot-field">
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="form-name" value="hat-orders" />
+                
+                <label for="hat-choice">Which hat caught your eye?</label>
+                <select name="hat-choice" id="hat-choice" required>
+                    <option value="">Choose a hat...</option>
+                    <option value="Wild Horse">Wild Horse - $30</option>
+                    <option value="Custom Request">Custom Request - Tell us what you want!</option>
+                </select>
+
+                <label for="customer-name">Your Name:</label>
+                <input type="text" name="customer-name" id="customer-name" required>
+
+                <label for="customer-email">Your Email:</label>
+                <input type="email" name="customer-email" id="customer-email" required>
+
+                <label for="message">Message (size, color preferences, pickup details):</label>
+                <textarea name="message" id="message" rows="4" placeholder="Tell us about size, colors you love, and how you'd like to get your hat!"></textarea>
+
+                <button type="submit" class="submit-btn">Send My Order!</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 JW Knitique | Made with ❤️ by two horse-loving knitters</p>
+        <p>Email us: <a href="mailto:cozy@jwknitique.com">cozy@jwknitique.com</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
