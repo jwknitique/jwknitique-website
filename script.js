@@ -1,4 +1,31 @@
-// JW Knitique - Simple JavaScript for hat ordering
+// JW Knitique - Simple JavaScript for hat ordering and lightbox
+
+// Lightbox functionality
+function openLightbox(imageSrc, hatName, hatDescription, hatPrice, isSold) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxInfo = document.getElementById('lightbox-info');
+    
+    lightboxImg.src = imageSrc;
+    lightboxImg.alt = hatName + ' Hat';
+    
+    let infoHTML = `<h3>${hatName}</h3><p>${hatDescription}</p>`;
+    if (!isSold) {
+        infoHTML += `<p class="price">${hatPrice}</p>`;
+    } else {
+        infoHTML += `<p class="sold-badge">SOLD!</p>`;
+    }
+    
+    lightboxInfo.innerHTML = infoHTML;
+    lightbox.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+}
 
 // Function called when "I want [Hat Name]!" button is clicked
 function orderHat(hatName) {
@@ -122,7 +149,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Add sparkle effect to order buttons
+// Add sparkle effect to order buttons and setup lightbox
 document.addEventListener('DOMContentLoaded', function() {
     const orderButtons = document.querySelectorAll('.order-btn');
     orderButtons.forEach(button => {
@@ -130,4 +157,36 @@ document.addEventListener('DOMContentLoaded', function() {
             addSparkle(this);
         });
     });
+    
+    // Add click listeners to all hat images
+    const hatImages = document.querySelectorAll('.hat-image');
+    hatImages.forEach(img => {
+        img.addEventListener('click', function() {
+            const hatDiv = this.closest('.hat');
+            const hatName = hatDiv.querySelector('h3').textContent;
+            const hatDescription = hatDiv.querySelector('.hat-info p').textContent;
+            const priceElement = hatDiv.querySelector('.price');
+            const hatPrice = priceElement ? priceElement.textContent : '';
+            const isSold = hatDiv.classList.contains('sold');
+            
+            openLightbox(this.src, hatName, hatDescription, hatPrice, isSold);
+        });
+    });
+    
+    // Close lightbox when clicking outside the image
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        
+        // Close with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    }
 });

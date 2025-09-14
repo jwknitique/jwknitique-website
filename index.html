@@ -66,7 +66,7 @@
 
         <section class="payment">
             <h2>Support Our Horse Camp Dream</h2>
-            <p>Pay with Venmo or send us an order!</p>
+            <p>Pay with Venmo now or pay later!</p>
             <img src="images/venmo-qr.jpg" alt="Venmo QR Code" class="venmo-qr">
             <p><strong>Venmo:</strong> @JW-Knitique</p>
         </section>
@@ -81,9 +81,9 @@
                 <label for="hat-choice">Which hat caught your eye?</label>
                 <select name="hat-choice" id="hat-choice" required>
                     <option value="">Choose a hat...</option>
-                    <option value="Wild Horse">Rubby Cuddler</option>
-                    <option value="Wild Horse">Snow White</option>
-                    <option value="Wild Horse">Marigold 2</option>
+                    <option value="Ruby Cuddler">Rubby Cuddler</option>
+                    <option value="Snow White">Snow White</option>
+                    <option value="Marigold 2">Marigold 2</option>
                     <option value="Custom Request">Custom Request - Tell us what you want!</option>
                 </select>
 
@@ -105,6 +105,15 @@
         <p>&copy; 2025 JW Knitique | Made with ❤️ by two horse-camp-dreaming knitters</p>
         <p>Email us: <a href="mailto:cozy@jwknitique.com">cozy@jwknitique.com</a></p>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+            <div id="lightbox-info" class="lightbox-info"></div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
