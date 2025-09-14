@@ -74,12 +74,12 @@
         <!-- Contact Form -->
         <section class="contact">
             <h2>Order a Hat</h2>
-            <form name="hat-orders" method="POST" netlify netlify-honeypot="bot-field">
+            <form name="hat-orders" method="POST" action="/success" netlify netlify-honeypot="bot-field">
                 <input type="hidden" name="bot-field" />
                 <input type="hidden" name="form-name" value="hat-orders" />
                 
                 <label for="hat-choice">Which hat caught your eye?</label>
-                <select name="hat-choice" id="hat-choice" required>
+                <select name="hatChoice" id="hat-choice" required>
                     <option value="">Choose a hat...</option>
                     <option value="Ruby Cuddler">Rubby Cuddler</option>
                     <option value="Snow White">Snow White</option>
@@ -88,7 +88,7 @@
                 </select>
 
                 <label for="customer-name">Your Name:</label>
-                <input type="text" name="customer-name" id="customer-name" required>
+                <input type="text" name="customerName" id="customer-name" required>
 
                 <label for="customer-email">Your Email:</label>
                 <input type="email" name="email" id="customer-email" required>
