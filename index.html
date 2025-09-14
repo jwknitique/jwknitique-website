@@ -91,7 +91,8 @@
                 <input type="text" name="customer-name" id="customer-name" required>
 
                 <label for="customer-email">Your Email:</label>
-                <input type="email" name="customer-email" id="customer-email" required>
+                <input type="email" name="email" id="customer-email" required>
+                <!-- note the input name above has to be "email" for netlify to properly set up the reply-to for emails -->
 
                 <label for="message">Message (size, color preferences, pickup details):</label>
                 <textarea name="message" id="message" rows="4" placeholder="Tell us about size, colors you love, and how you'd like to get your hat!"></textarea>
