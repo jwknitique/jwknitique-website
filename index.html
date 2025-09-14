@@ -23,21 +23,41 @@
             
             <!-- Example available hat -->
             <div class="hat available">
-                <img src="placeholder-hat.jpg" alt="Wild Horse Hat" class="hat-image">
+                <img src="images/ruby-cuddler.jpg" alt="Ruby Cuddler Hat" class="hat-image">
                 <div class="hat-info">
-                    <h3>Wild Horse</h3>
-                    <p>Adventurous spirit in deep brown with leather accent</p>
+                    <h3>Ruby Cuddler</h3>
+                    <p>KID SIZE tight and heavy woven for lovers of candy apples and cherry pie!</p>
+                    <span class="price">$25</span>
+                    <button onclick="orderHat('Ruby Cuddler')" class="order-btn">I want the Ruby Cuddler!</button>
+                </div>
+            </div>
+
+            <div class="hat available">
+                <img src="images/snow-white.jpg" alt="Snow White Hat" class="hat-image">
+                <div class="hat-info">
+                    <h3>Snow White</h3>
+                    <p>KID SIZE soft and warm, watch out for that snowball!</p>
+                    <span class="price">$25</span>
+                    <button onclick="orderHat('Snow White')" class="order-btn">I want the Snow White!</button>
+                </div>
+            </div>
+
+            <div class="hat available">
+                <img src="images/marigold-2.jpg" alt="Marigold Hat" class="hat-image">
+                <div class="hat-info">
+                    <h3>Marigold 2</h3>
+                    <p>Soft and warm for dancing in chilly meadows!</p>
                     <span class="price">$30</span>
-                    <button onclick="orderHat('Wild Horse')" class="order-btn">I want Wild Horse!</button>
+                    <button onclick="orderHat('Marigold 2')" class="order-btn">I want Marigold 2!</button>
                 </div>
             </div>
 
             <!-- Example sold hat -->
             <div class="hat sold">
-                <img src="placeholder-hat.jpg" alt="Juniper Hat" class="hat-image">
+                <img src="images/marigold-1.jpg" alt="Marigold" class="hat-image">
                 <div class="hat-info">
-                    <h3>Juniper</h3>
-                    <p>Cozy winter vibes in forest green</p>
+                    <h3>Marigold 1</h3>
+                    <p>Soft and warm for dancing in chilly meadows!</p>
                     <span class="sold-badge">SOLD - Thank you!</span>
                 </div>
             </div>
@@ -47,8 +67,8 @@
         <section class="payment">
             <h2>Support Our Horse Camp Dream</h2>
             <p>Pay with Venmo or send us an order!</p>
-            <img src="venmo-qr.jpg" alt="Venmo QR Code" class="venmo-qr">
-            <p><strong>Venmo:</strong> @your-venmo-handle</p>
+            <img src="images/venmo-qr.jpg" alt="Venmo QR Code" class="venmo-qr">
+            <p><strong>Venmo:</strong> @JW-Knitique</p>
         </section>
 
         <!-- Contact Form -->
@@ -61,7 +81,9 @@
                 <label for="hat-choice">Which hat caught your eye?</label>
                 <select name="hat-choice" id="hat-choice" required>
                     <option value="">Choose a hat...</option>
-                    <option value="Wild Horse">Wild Horse - $30</option>
+                    <option value="Wild Horse">Rubby Cuddler</option>
+                    <option value="Wild Horse">Snow White</option>
+                    <option value="Wild Horse">Marigold 2</option>
                     <option value="Custom Request">Custom Request - Tell us what you want!</option>
                 </select>
 
@@ -80,7 +102,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 JW Knitique | Made with ❤️ by two horse-loving knitters</p>
+        <p>&copy; 2025 JW Knitique | Made with ❤️ by two horse-camp-dreaming knitters</p>
         <p>Email us: <a href="mailto:cozy@jwknitique.com">cozy@jwknitique.com</a></p>
     </footer>
 
