@@ -57,12 +57,30 @@ function orderHat(hatName) {
     }, 500);
 }
 
+// Update subject line with customer name and order number
+function updateSubject() {
+    const customerName = document.getElementById('customer-name').value;
+    const subjectField = document.getElementById('dynamic-subject');
+    
+    // Generate a simple order number based on timestamp
+    const orderNumber = Date.now().toString().slice(-6); // Last 6 digits of timestamp
+    
+    if (customerName && customerName.trim() !== '') {
+        subjectField.value = `🧶 Hat Order from ${customerName.trim()} (#${orderNumber})`;
+    } else {
+        subjectField.value = `🧶 New Hat Order (#${orderNumber})`;
+    }
+}
+
 // Form submission feedback
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form[name="hat-orders"]');
     
     if (form) {
+        // Update subject line right before form submission
         form.addEventListener('submit', function(e) {
+            updateSubject(); // Set the subject line with customer name
+            
             const submitBtn = document.querySelector('.submit-btn');
             
             // Change button text to show it's working
@@ -70,6 +88,12 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.style.background = '#666';
             submitBtn.disabled = true;
         });
+        
+        // Also update subject as they type their name (optional, for real-time preview)
+        const nameField = document.getElementById('customer-name');
+        if (nameField) {
+            nameField.addEventListener('input', updateSubject);
+        }
     }
     
     // Check if we're on the success page (Netlify redirects here after form submission)
