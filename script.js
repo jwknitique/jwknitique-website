@@ -74,43 +74,48 @@ function updateSubject() {
 
 // Form submission feedback
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Page loaded, looking for form...');
     const form = document.querySelector('form[name="hat-orders"]');
+    console.log('Form found:', form);
     
     if (form) {
+        console.log('Adding form submit listener...');
         // Update subject line right before form submission
         form.addEventListener('submit', function(e) {
-			// Add this to the START of your existing form submit event listener
-			// Check honeypots first
-			const website = document.querySelector('input[name="website"]').value;
-			const phone2 = document.querySelector('input[name="phone2"]').value;
-			const backupEmail = document.querySelector('input[name="backup-email"]').value;
-
-			if (website || phone2 || backupEmail) {
-				e.preventDefault();
-				console.log('Bot detected - honeypot filled');
-				return; // Silently fail
-			}
-
-            updateSubject(); // Set the subject line with customer name
+            console.log('Form submitted!');
+            
+            // Check honeypots first
+            console.log('Checking honeypots...');
+            const website = document.querySelector('input[name="website"]');
+            const phone2 = document.querySelector('input[name="phone2"]');
+            const backupEmail = document.querySelector('input[name="backup-email"]');
+            
+            console.log('Honeypot fields:', website, phone2, backupEmail);
+            
+            const websiteValue = website ? website.value : 'field not found';
+            const phone2Value = phone2 ? phone2.value : 'field not found';
+            const backupEmailValue = backupEmail ? backupEmail.value : 'field not found';
+            
+            console.log('Honeypot values:', websiteValue, phone2Value, backupEmailValue);
+            
+            if ((website && website.value) || (phone2 && phone2.value) || (backupEmail && backupEmail.value)) {
+                console.log('Bot detected - preventing submission');
+                e.preventDefault();
+                return;
+            }
+            
+            console.log('Honeypots passed, continuing...');
+            updateSubject();
             
             const submitBtn = document.querySelector('.submit-btn');
-            
-            // Change button text to show it's working
             submitBtn.textContent = 'Sending your order...';
             submitBtn.style.background = '#666';
             submitBtn.disabled = true;
+            
+            console.log('Form submission should proceed normally');
         });
-        
-        // Also update subject as they type their name (optional, for real-time preview)
-        const nameField = document.getElementById('customer-name');
-        if (nameField) {
-            nameField.addEventListener('input', updateSubject);
-        }
-    }
-    
-    // Check if we're on the success page (Netlify redirects here after form submission)
-    if (window.location.search.includes('success')) {
-        showSuccessMessage();
+    } else {
+        console.log('Form not found!');
     }
 });
 
