@@ -79,6 +79,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (form) {
         // Update subject line right before form submission
         form.addEventListener('submit', function(e) {
+			// Add this to the START of your existing form submit event listener
+			// Check honeypots first
+			const website = document.querySelector('input[name="website"]').value;
+			const phone2 = document.querySelector('input[name="phone2"]').value;
+			const backupEmail = document.querySelector('input[name="backup-email"]').value;
+
+			if (website || phone2 || backupEmail) {
+				e.preventDefault();
+				console.log('Bot detected - honeypot filled');
+				return; // Silently fail
+			}
+
             updateSubject(); // Set the subject line with customer name
             
             const submitBtn = document.querySelector('.submit-btn');
