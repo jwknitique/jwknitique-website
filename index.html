@@ -15,46 +15,64 @@
     <main>
         <section class="about">
             <h2>Our Story</h2>
-            <p>We're two sisters who love knitting and dream of horse camp! Each hat is handmade with love. Every purchase helps us get closer to our goal!</p>
+            <p>We're two sisters who love knitting and dream of horse camp! Each hat is handmade with love. Every purchase helps us get closer to our goal of <a href="https://marmonvalley.com/" target="_blank" style="color: #8B4513; font-weight: bold; text-decoration: underline;">Marmon Valley horse camp!</a>!</p>
         </section>
 
         <section class="hats-gallery">
             <h2>Our Hat Collection</h2>
-            <h2>A Lot More Are On The Way!</h2>
-            <p>(Dad has to post them - come on, Dad!)</p>
+            <h3>A Lot More Are On The Way!</h3>
+            <p style="text-align: center; color: #666; font-style: italic;">(Dad has to post them - come on, Dad!)</p>
             
-            <!-- Example available hat -->
+            <!-- Available hat with checkbox -->
             <div class="hat available">
-                <img src="images/ruby-cuddler.jpg" alt="Ruby Cuddler Hat" class="hat-image">
-                <div class="hat-info">
-                    <h3>Ruby Cuddler</h3>
-                    <p>KID SIZE tight and heavy woven for lovers of candy apples and cherry pie!</p>
-                    <span class="price">$25</span>
-                    <button onclick="orderHat('Ruby Cuddler')" class="order-btn">I want the Ruby Cuddler!</button>
-                </div>
+                <input type="checkbox" class="hat-checkbox" data-hat="Ruby Cuddler" data-price="25" id="ruby-cuddler">
+                <label for="ruby-cuddler" class="hat-card">
+                    <img src="images/ruby-cuddler.jpg" alt="Ruby Cuddler Hat" class="hat-image">
+                    <div class="hat-info">
+                        <h3>Ruby Cuddler</h3>
+                        <p>KID SIZE tight and heavy woven for lovers of candy apples and cherry pie!</p>
+                        <span class="price">$25</span>
+                        <div class="hat-select">
+                            <span class="select-checkbox">✓</span>
+                            <span class="select-text">Select this hat</span>
+                        </div>
+                    </div>
+                </label>
             </div>
 
             <div class="hat available">
-                <img src="images/snow-white.jpg" alt="Snow White Hat" class="hat-image">
-                <div class="hat-info">
-                    <h3>Snow White</h3>
-                    <p>KID SIZE soft and warm, watch out for that snowball!</p>
-                    <span class="price">$25</span>
-                    <button onclick="orderHat('Snow White')" class="order-btn">I want the Snow White!</button>
-                </div>
+                <input type="checkbox" class="hat-checkbox" data-hat="Snow White" data-price="25" id="snow-white">
+                <label for="snow-white" class="hat-card">
+                    <img src="images/snow-white.jpg" alt="Snow White Hat" class="hat-image">
+                    <div class="hat-info">
+                        <h3>Snow White</h3>
+                        <p>KID SIZE soft and warm, watch out for that snowball!</p>
+                        <span class="price">$25</span>
+                        <div class="hat-select">
+                            <span class="select-checkbox">✓</span>
+                            <span class="select-text">Select this hat</span>
+                        </div>
+                    </div>
+                </label>
             </div>
 
             <div class="hat available">
-                <img src="images/marigold-2.jpg" alt="Marigold Hat" class="hat-image">
-                <div class="hat-info">
-                    <h3>Marigold 2</h3>
-                    <p>Soft and warm for dancing in chilly meadows!</p>
-                    <span class="price">$30</span>
-                    <button onclick="orderHat('Marigold 2')" class="order-btn">I want Marigold 2!</button>
-                </div>
+                <input type="checkbox" class="hat-checkbox" data-hat="Marigold 2" data-price="30" id="marigold-2">
+                <label for="marigold-2" class="hat-card">
+                    <img src="images/marigold-2.jpg" alt="Marigold Hat" class="hat-image">
+                    <div class="hat-info">
+                        <h3>Marigold 2</h3>
+                        <p>Soft and warm for dancing in chilly meadows!</p>
+                        <span class="price">$30</span>
+                        <div class="hat-select">
+                            <span class="select-checkbox">✓</span>
+                            <span class="select-text">Select this hat</span>
+                        </div>
+                    </div>
+                </label>
             </div>
 
-            <!-- Example sold hat -->
+            <!-- Sold hat (no checkbox) -->
             <div class="hat sold">
                 <img src="images/marigold-1.jpg" alt="Marigold" class="hat-image">
                 <div class="hat-info">
@@ -67,46 +85,56 @@
         </section>
 
         <section class="payment">
-            <h2>Support Our Horse Camp Dream</h2>
-            <p>Pay with Venmo now or pay later!</p>
-            <img src="images/venmo-qr.jpg" alt="Venmo QR Code" class="venmo-qr">
-            <p><strong>Venmo:</strong> @JW-Knitique</p>
+            <h2>Want to Support Our Horse Camp Dream?</h2>
+            <p>Love what we're doing? Want to help us get to horse camp faster?</p><p>You can make an optional donation!</p>
+            <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 400px; margin: 1.5rem auto;">
+                <a href="https://venmo.com/u/JW-Knitique" class="payment-btn" target="_blank" rel="noopener noreferrer" style="background: linear-gradient(135deg, #008CFF, #0074D9); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: bold; transition: all 0.3s ease;">Donate via Venmo</a>
+                <a href="https://paypal.me/JWKnitique" class="payment-btn" target="_blank" rel="noopener noreferrer" style="background: linear-gradient(135deg, #0070BA, #003087); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: bold; transition: all 0.3s ease;">Donate via PayPal</a>
+                <a href="https://cash.app/$JWKnitique" class="payment-btn" target="_blank" rel="noopener noreferrer" style="background: linear-gradient(135deg, #00D632, #00B82B); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: bold; transition: all 0.3s ease;">Donate via Cash App</a>
+            </div>
+            <p style="margin-top: 1rem; font-style: italic;">Every bit helps! Thank you!</p>
         </section>
 
         <!-- Contact Form -->
         <section class="contact">
-            <h2>Order a Hat</h2>
-			<form name="hat-orders" method="POST" action="/success" netlify netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+            <h2>Order Your Hats</h2>
+            <form name="hat-orders" method="POST" action="/success" netlify netlify-honeypot="bot-field" data-netlify-recaptcha="true">
                 <input type="hidden" name="bot-field" />
                 <input type="hidden" name="form-name" value="hat-orders" />
                 <input type="hidden" id="dynamic-subject" name="subject" value="🧶 New Hat Order from JW Knitique">
+                <input type="hidden" id="selected-hats" name="selectedHats" value="">
+                <input type="hidden" id="order-total" name="orderTotal" value="">
+                <input type="hidden" id="order-number" name="orderNumber" value="">
                 
-				<!-- Additional honeypots -->
-				<input type="text" name="website" value="" style="position: absolute; left: -5000px;" tabindex="-1">
-				<input type="text" name="phone2" value="" style="display: none;">
-				<input type="email" name="backup-email" value="" style="visibility: hidden;">
- 
-                <label for="hat-choice">Which hat caught your eye?</label>
-                <select name="hatChoice" id="hat-choice" required>
-                    <option value="">Choose a hat...</option>
-                    <option value="Ruby Cuddler">Rubby Cuddler</option>
-                    <option value="Snow White">Snow White</option>
-                    <option value="Marigold 2">Marigold 2</option>
-                    <option value="Custom Request">Custom Request - Tell us what you want!</option>
-                </select>
+                <!-- Additional honeypots -->
+                <input type="text" name="website" value="" style="position: absolute; left: -5000px;" tabindex="-1">
+                <input type="text" name="phone2" value="" style="display: none;">
+                <input type="email" name="backup-email" value="" style="visibility: hidden;">
+
+                <div id="order-summary" class="order-summary">
+                    <!-- Selected hats will be displayed here -->
+                </div>
 
                 <label for="customer-name">Your Name:</label>
                 <input type="text" name="customerName" id="customer-name" required>
 
                 <label for="customer-email">Your Email:</label>
                 <input type="email" name="email" id="customer-email" required>
-                <!-- note the input name above has to be "email" for netlify to properly set up the reply-to for emails -->
 
-                <label for="message">Message (size, color preferences, pickup details):</label>
-                <textarea name="message" id="message" rows="4" placeholder="Tell us about size, colors you love, and how you'd like to get your hat!"></textarea>
+                <label for="payment-timing">When would you like to pay?</label>
+                <select name="paymentTiming" id="payment-timing" required>
+                    <option value="">Choose an option...</option>
+                    <option value="pay-now">I want to pay now</option>
+                    <option value="pay-later">I'll pay later</option>
+                </select>
 
-				<div data-netlify-recaptcha="true"></div>
-                <button type="submit" class="submit-btn">Send My Order!</button>
+                <label for="message">Delivery preferences and questions:</label>
+                <textarea name="message" id="message" rows="4" placeholder="We can deliver in Dayton or mail it!&#10;&#10;Also: Did you ever go to camp as a kid? Did you like it?"></textarea>
+
+                <div data-netlify-recaptcha="true"></div>
+                
+                <button type="button" id="continue-shopping" class="continue-shopping-btn">← Continue Shopping</button>
+                <button type="submit" class="submit-btn">Yay Horse Camp! (click to submit)</button>
             </form>
         </section>
     </main>
@@ -115,6 +143,18 @@
         <p>&copy; 2025 JW Knitique | Made with ❤️ by two horse-camp-dreaming knitters</p>
         <p>Email us: <a href="mailto:cozy@jwknitique.com">cozy@jwknitique.com</a></p>
     </footer>
+
+    <!-- Floating cart -->
+    <div id="floating-cart" class="floating-cart">
+        <div class="cart-content">
+            <div class="cart-summary">
+                <span id="cart-count">0 hats</span>
+                <span id="cart-total">$0</span>
+            </div>
+            <button id="checkout-btn" class="checkout-btn">Order My Hats!</button>
+            <button id="clear-cart" class="clear-btn">Unravel</button>
+        </div>
+    </div>
 
     <!-- Lightbox Modal -->
     <div id="lightbox" class="lightbox">

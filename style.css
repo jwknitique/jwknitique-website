@@ -73,22 +73,52 @@ h2 {
 }
 
 .hat {
+    position: relative;
+}
+
+/* Hide default checkboxes */
+.hat-checkbox {
+    display: none;
+}
+
+/* Hat card styling */
+.hat-card {
     display: flex;
     background: white;
     border: 2px solid #ddd;
     border-radius: 15px;
     padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.hat:hover {
+.hat-card:hover {
     transform: translateY(-5px);
+    border-color: #8B4513;
 }
 
+/* Selected state */
+.hat-checkbox:checked + .hat-card {
+    border-color: #32CD32;
+    background: #f0fff0;
+    box-shadow: 0 6px 12px rgba(50, 205, 50, 0.3);
+}
+
+.hat-checkbox:checked + .hat-card .select-checkbox {
+    background: #32CD32;
+    color: white;
+}
+
+/* Sold hats styling (no checkbox, different layout) */
 .hat.sold {
     opacity: 0.7;
     background: #f0f0f0;
+    display: flex;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .hat-image {
@@ -98,6 +128,12 @@ h2 {
     border-radius: 10px;
     margin-right: 2rem;
     border: 2px solid #8B4513;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.hat-image:hover {
+    transform: scale(1.05);
 }
 
 .hat-info {
@@ -127,22 +163,31 @@ h2 {
     margin-bottom: 1rem;
 }
 
-.order-btn {
-    background: linear-gradient(135deg, #228B22, #32CD32);
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    max-width: 200px;
+/* Hat selection indicator */
+.hat-select {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
 }
 
-.order-btn:hover {
-    background: linear-gradient(135deg, #32CD32, #228B22);
-    transform: scale(1.05);
+.select-checkbox {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #8B4513;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    color: transparent;
+}
+
+.select-text {
+    font-size: 0.9rem;
+    color: #8B4513;
+    font-weight: bold;
 }
 
 .sold-badge {
@@ -153,6 +198,139 @@ h2 {
     font-weight: bold;
     text-align: center;
     max-width: 200px;
+}
+
+/* Floating cart */
+.floating-cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #8B4513, #D2691E);
+    color: white;
+    border-radius: 25px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    z-index: 500;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100px);
+}
+
+.floating-cart.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.cart-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cart-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#cart-count {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+#cart-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.checkout-btn {
+    background: #32CD32;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.checkout-btn:hover {
+    background: #228B22;
+    transform: scale(1.05);
+}
+
+.clear-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.clear-btn:hover {
+    background: white;
+    color: #8B4513;
+}
+
+/* Order summary in form */
+.order-summary {
+    background: #f0fff0;
+    border: 2px solid #32CD32;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    display: none;
+}
+
+.order-summary.visible {
+    display: block;
+}
+
+.order-summary h3 {
+    color: #228B22;
+    margin-bottom: 0.5rem;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 0;
+}
+
+.order-total-line {
+    font-weight: bold;
+    border-top: 2px solid #32CD32;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Continue shopping button */
+.continue-shopping-btn {
+    background: transparent;
+    color: #8B4513;
+    border: 2px solid #8B4513;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.continue-shopping-btn:hover {
+    background: #8B4513;
+    color: white;
+    transform: translateY(-2px);
 }
 
 /* Payment section */
@@ -310,15 +488,6 @@ footer a:hover {
     background: rgba(139, 69, 19, 0.8);
 }
 
-.hat-image {
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.hat-image:hover {
-    transform: scale(1.05);
-}
-
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -334,7 +503,7 @@ footer a:hover {
         font-size: 1rem;
     }
     
-    .hat {
+    .hat-card, .hat.sold {
         flex-direction: column;
         text-align: center;
     }
@@ -347,7 +516,30 @@ footer a:hover {
         align-self: center;
     }
     
-    .order-btn, .sold-badge {
-        max-width: none;
+    .floating-cart {
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+        border-radius: 15px;
+    }
+    
+    .cart-content {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .checkout-btn, .clear-btn {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+    
+    .continue-shopping-btn {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .submit-btn {
+        margin-top: 0.5rem;
     }
 }
