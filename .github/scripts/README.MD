@@ -5,13 +5,13 @@ This GitHub Action automatically syncs hat data from Google Drive to the website
 Runs every hour and updates `hats-data.json` with new/changed hats.
 
 ## Google Cloud Setup
-- **Project:** JW Knitique Hat Sync (or whatever you named it)
+- **Project:** JW Knitique
 - **Service Account:** hat-sync-bot@[project-id].iam.gserviceaccount.com
 - **API Enabled:** Google Drive API (read-only access)
 
 ## GitHub Secrets Required
 - `GOOGLE_CREDENTIALS` - Full JSON key from service account
-- `DRIVE_FOLDER_ID` - ID of the "JW Knitique Hats" folder in Drive
+- `DRIVE_FOLDER_ID` - ID of the "hat" folder in the jwknitique@gmail.com Google Drive
 
 ## How It Works
 1. Girls add folders to shared Drive folder (each folder = one hat)
