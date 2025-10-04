@@ -6,9 +6,12 @@ on:
     - cron: '0 * * * *'
   workflow_dispatch:  # Allow manual trigger from GitHub UI
 
+
 jobs:
   sync-hats:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     
     steps:
       - name: Checkout repository
