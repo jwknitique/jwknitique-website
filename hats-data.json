@@ -1,6 +1,15 @@
 {
   "hats": [
     {
+      "id": "the-husky-",
+      "name": "The Husky ",
+      "description": "\ufeffGreat for mushing sled dogs! Warm and thick!",
+      "price": 30,
+      "status": "available",
+      "image": "images/the-husky-.jpg",
+      "folder_name": "The Husky "
+    },
+    {
       "id": "superman",
       "name": "Superman",
       "description": "KID SIZE Cozily leap tall buildings in a single bound!",
