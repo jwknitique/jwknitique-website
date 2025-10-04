@@ -70,6 +70,16 @@ function updateCart(checkboxElement) {
     updateFloatingCart();
     updateFormData();
     
+    // If order summary is visible, update it
+    const orderSummary = document.getElementById('order-summary');
+    if (orderSummary.classList.contains('visible')) {
+        if (selectedHats.length === 0) {
+            orderSummary.classList.remove('visible');
+        } else {
+            updateOrderSummary();
+        }
+    }
+    
     // Show encouraging message if a hat was just selected (not unselected)
     if (checkboxElement && checkboxElement.checked) {
         const hatDiv = checkboxElement.closest('.hat');
@@ -141,7 +151,7 @@ function clearCart() {
         checkbox.checked = false;
     });
     updateCart();
-    updateOrderSummary();
+    updateOrderSummary(); // Ensure order summary is cleared/hidden
 }
 
 // Update the subject line generation to include selected hats
@@ -325,9 +335,95 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// Load and render hats from JSON
+async function loadHats() {
+    try {
+        const response = await fetch('hats-data.json');
+        const data = await response.json();
+        const hats = data.hats || [];
+        
+        const container = document.getElementById('hats-container');
+        
+        if (hats.length === 0) {
+            container.innerHTML = '<p style="text-align: center; padding: 2rem; color: #666;">No hats yet! Check back soon - new hats are being added!</p>';
+            return;
+        }
+        
+        container.innerHTML = ''; // Clear loading message
+        
+        hats.forEach(hat => {
+            const hatDiv = document.createElement('div');
+            hatDiv.className = `hat ${hat.status}`;
+            
+            if (hat.status === 'available') {
+                // Available hat with checkbox
+                hatDiv.innerHTML = `
+                    <input type="checkbox" class="hat-checkbox" data-hat="${hat.name}" data-price="${hat.price}" id="${hat.id}">
+                    <label for="${hat.id}" class="hat-card">
+                        <img src="${hat.image}" alt="${hat.name} Hat" class="hat-image">
+                        <div class="hat-info">
+                            <h3>${hat.name}</h3>
+                            <p>${hat.description}</p>
+                            <span class="price">${hat.price}</span>
+                            <div class="hat-select">
+                                <span class="select-checkbox">✓</span>
+                                <span class="select-text">Select this hat</span>
+                            </div>
+                        </div>
+                    </label>
+                `;
+            } else {
+                // Sold hat (no checkbox)
+                hatDiv.innerHTML = `
+                    <img src="${hat.image}" alt="${hat.name} Hat" class="hat-image">
+                    <div class="hat-info">
+                        <h3>${hat.name}</h3>
+                        <p>${hat.description}</p>
+                        <span class="sold-badge">SOLD - Thank you!</span>
+                    </div>
+                `;
+            }
+            
+            container.appendChild(hatDiv);
+        });
+        
+        // Re-initialize shopping cart after hats are loaded
+        initShoppingCart();
+        setupLightbox();
+        
+    } catch (error) {
+        console.error('Error loading hats:', error);
+        const container = document.getElementById('hats-container');
+        container.innerHTML = '<p style="text-align: center; padding: 2rem; color: #ff6b6b;">Error loading hats. Please refresh the page.</p>';
+    }
+}
+
+// Setup lightbox for dynamically loaded images
+function setupLightbox() {
+    const hatImages = document.querySelectorAll('.hat-image');
+    hatImages.forEach(img => {
+        img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const hatDiv = this.closest('.hat');
+            const hatName = hatDiv.querySelector('h3').textContent;
+            const hatDescription = hatDiv.querySelector('.hat-info p').textContent;
+            const priceElement = hatDiv.querySelector('.price');
+            const hatPrice = priceElement ? priceElement.textContent : '';
+            const isSold = hatDiv.classList.contains('sold');
+            
+            openLightbox(this.src, hatName, hatDescription, hatPrice, isSold);
+        });
+    });
+}
+
 // Initialize everything on page load
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     console.log('Page loaded, initializing...');
+    
+    // Load hats from JSON first
+    await loadHats();
     
     // Generate order number
     generateOrderNumber();

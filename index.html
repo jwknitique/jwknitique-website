@@ -15,7 +15,7 @@
     <main>
         <section class="about">
             <h2>Our Story</h2>
-            <p>We're two sisters who love knitting and dream of horse camp! Each hat is handmade with love. Every purchase helps us get closer to our goal of <a href="https://marmonvalley.com/" target="_blank" style="color: #8B4513; font-weight: bold; text-decoration: underline;">Marmon Valley horse camp!</a>!</p>
+            <p>We're two sisters who love knitting and dream of horse camp! Each hat is handmade with love. Every purchase helps us get closer to our goal!</p>
         </section>
 
         <section class="hats-gallery">
@@ -23,76 +23,21 @@
             <h3>A Lot More Are On The Way!</h3>
             <p style="text-align: center; color: #666; font-style: italic;">(Dad has to post them - come on, Dad!)</p>
             
-            <!-- Available hat with checkbox -->
-            <div class="hat available">
-                <input type="checkbox" class="hat-checkbox" data-hat="Ruby Cuddler" data-price="25" id="ruby-cuddler">
-                <label for="ruby-cuddler" class="hat-card">
-                    <img src="images/ruby-cuddler.jpg" alt="Ruby Cuddler Hat" class="hat-image">
-                    <div class="hat-info">
-                        <h3>Ruby Cuddler</h3>
-                        <p>KID SIZE tight and heavy woven for lovers of candy apples and cherry pie!</p>
-                        <span class="price">$25</span>
-                        <div class="hat-select">
-                            <span class="select-checkbox">✓</span>
-                            <span class="select-text">Select this hat</span>
-                        </div>
-                    </div>
-                </label>
+            <div id="hats-container">
+                <!-- Hats will be dynamically loaded here -->
+                <p style="text-align: center; padding: 2rem;">Loading hats...</p>
             </div>
-
-            <div class="hat available">
-                <input type="checkbox" class="hat-checkbox" data-hat="Snow White" data-price="25" id="snow-white">
-                <label for="snow-white" class="hat-card">
-                    <img src="images/snow-white.jpg" alt="Snow White Hat" class="hat-image">
-                    <div class="hat-info">
-                        <h3>Snow White</h3>
-                        <p>KID SIZE soft and warm, watch out for that snowball!</p>
-                        <span class="price">$25</span>
-                        <div class="hat-select">
-                            <span class="select-checkbox">✓</span>
-                            <span class="select-text">Select this hat</span>
-                        </div>
-                    </div>
-                </label>
-            </div>
-
-            <div class="hat available">
-                <input type="checkbox" class="hat-checkbox" data-hat="Marigold 2" data-price="30" id="marigold-2">
-                <label for="marigold-2" class="hat-card">
-                    <img src="images/marigold-2.jpg" alt="Marigold Hat" class="hat-image">
-                    <div class="hat-info">
-                        <h3>Marigold 2</h3>
-                        <p>Soft and warm for dancing in chilly meadows!</p>
-                        <span class="price">$30</span>
-                        <div class="hat-select">
-                            <span class="select-checkbox">✓</span>
-                            <span class="select-text">Select this hat</span>
-                        </div>
-                    </div>
-                </label>
-            </div>
-
-            <!-- Sold hat (no checkbox) -->
-            <div class="hat sold">
-                <img src="images/marigold-1.jpg" alt="Marigold" class="hat-image">
-                <div class="hat-info">
-                    <h3>Marigold 1</h3>
-                    <p>Soft and warm for dancing in chilly meadows!</p>
-                    <span class="sold-badge">SOLD - Thank you!</span>
-                </div>
-            </div>
-
         </section>
 
         <section class="payment">
             <h2>Want to Support Our Horse Camp Dream?</h2>
-            <p>Love what we're doing? Want to help us get to horse camp faster?</p><p>You can make an optional donation!</p>
+            <p>Love what we're doing? You can make an optional donation to help us get to horse camp faster!</p>
             <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 400px; margin: 1.5rem auto;">
-                <a href="https://venmo.com/u/JW-Knitique" class="payment-btn" target="_blank" rel="noopener noreferrer" style="background: linear-gradient(135deg, #008CFF, #0074D9); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: bold; transition: all 0.3s ease;">Donate via Venmo</a>
-                <a href="https://paypal.me/JWKnitique" class="payment-btn" target="_blank" rel="noopener noreferrer" style="background: linear-gradient(135deg, #0070BA, #003087); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: bold; transition: all 0.3s ease;">Donate via PayPal</a>
-                <a href="https://cash.app/$JWKnitique" class="payment-btn" target="_blank" rel="noopener noreferrer" style="background: linear-gradient(135deg, #00D632, #00B82B); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: bold; transition: all 0.3s ease;">Donate via Cash App</a>
+                <a href="https://venmo.com/u/JW-Knitique" class="payment-btn" style="background: linear-gradient(135deg, #008CFF, #0074D9); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: bold; transition: all 0.3s ease;">Donate via Venmo</a>
+                <a href="https://paypal.me/JWKnitique" class="payment-btn" style="background: linear-gradient(135deg, #0070BA, #003087); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: bold; transition: all 0.3s ease;">Donate via PayPal</a>
+                <a href="https://cash.app/$JWKnitique" class="payment-btn" style="background: linear-gradient(135deg, #00D632, #00B82B); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: bold; transition: all 0.3s ease;">Donate via Cash App</a>
             </div>
-            <p style="margin-top: 1rem; font-style: italic;">Every bit helps! Thank you!</p>
+            <p style="margin-top: 1rem; font-style: italic;">Every bit helps! Thank you for believing in us!</p>
         </section>
 
         <!-- Contact Form -->
@@ -129,12 +74,12 @@
                 </select>
 
                 <label for="message">Delivery preferences and questions:</label>
-                <textarea name="message" id="message" rows="4" placeholder="We can deliver in Dayton or mail it!&#10;&#10;Also: Did you ever go to camp as a kid? Did you like it?"></textarea>
+                <textarea name="message" id="message" rows="4" placeholder="We can deliver in Dayton or mail it! Also: Did you ever go to camp as a kid? Did you like it?"></textarea>
 
                 <div data-netlify-recaptcha="true"></div>
                 
                 <button type="button" id="continue-shopping" class="continue-shopping-btn">← Continue Shopping</button>
-                <button type="submit" class="submit-btn">Yay Horse Camp! (click to submit)</button>
+                <button type="submit" class="submit-btn">Send My Order!</button>
             </form>
         </section>
     </main>

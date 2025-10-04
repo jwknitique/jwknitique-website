@@ -1,0 +1,43 @@
+name: Sync Hats from Google Drive
+
+on:
+  schedule:
+    # Run every hour
+    - cron: '0 * * * *'
+  workflow_dispatch:  # Allow manual trigger from GitHub UI
+
+jobs:
+  sync-hats:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Install dependencies
+        run: |
+          pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+          
+      - name: Create credentials file
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+        run: |
+          echo "$GOOGLE_CREDENTIALS" > credentials.json
+          
+      - name: Run sync script
+        env:
+          DRIVE_FOLDER_ID: ${{ secrets.DRIVE_FOLDER_ID }}
+        run: |
+          python .github/scripts/sync_hats.py
+          
+      - name: Commit and push if changes
+        run: |
+          git config --global user.name "Hat Bot"
+          git config --global user.email "bot@jwknitique.com"
+          git add images/ hats-data.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update hats from Google Drive" && git push)
