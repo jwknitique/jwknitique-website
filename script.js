@@ -364,7 +364,7 @@ async function loadHats() {
                         <div class="hat-info">
                             <h3>${hat.name}</h3>
                             <p>${hat.description}</p>
-                            <span class="price">${hat.price}</span>
+                            <span class="price">$${hat.price}</span>
                             <div class="hat-select">
                                 <span class="select-checkbox">✓</span>
                                 <span class="select-text">Select this hat</span>
