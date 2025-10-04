@@ -1,0 +1,50 @@
+{
+  "hats": [
+    {
+      "id": "superman",
+      "name": "Superman",
+      "description": "Cozily leap tall buildings in a single bound!",
+      "price": 20,
+      "status": "available",
+      "image": "images/superman.jpg",
+      "folder_name": "Superman"
+    },
+    {
+      "id": "snow-white",
+      "name": "Snow White",
+      "description": "\ufeffKID SIZE soft and warm, watch out for that snowball!",
+      "price": 25,
+      "status": "available",
+      "image": "images/snow-white.jpg",
+      "folder_name": "Snow White"
+    },
+    {
+      "id": "marigold-2",
+      "name": "Marigold 2",
+      "description": "\ufeffSoft and warm for dancing in chilly meadows!",
+      "price": 30,
+      "status": "available",
+      "image": "images/marigold-2.jpg",
+      "folder_name": "Marigold 2"
+    },
+    {
+      "id": "marigold-1",
+      "name": "Marigold 1",
+      "description": "Soft and warm for dancing in chilly meadows!",
+      "price": 30,
+      "status": "sold",
+      "image": "images/marigold-1.jpg",
+      "folder_name": "Marigold 1"
+    },
+    {
+      "id": "ruby-cuddler",
+      "name": "Ruby Cuddler",
+      "description": "KID SIZE tight and heavy woven for lovers of candy apples and cherry pie!",
+      "price": 25,
+      "status": "available",
+      "image": "images/ruby-cuddler.jpg",
+      "folder_name": "Ruby Cuddler"
+    }
+  ],
+  "last_sync": null
+}
