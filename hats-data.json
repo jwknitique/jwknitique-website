@@ -1,6 +1,15 @@
 {
   "hats": [
     {
+      "id": "the-maple",
+      "name": "The Maple",
+      "description": "\ufeffFor lovers of trees and Maple syrup",
+      "price": 30,
+      "status": "available",
+      "image": "images/the-maple.jpg",
+      "folder_name": "The Maple"
+    },
+    {
       "id": "the-husky-",
       "name": "The Husky ",
       "description": "\ufeffGreat for mushing sled dogs! Warm and thick!",
