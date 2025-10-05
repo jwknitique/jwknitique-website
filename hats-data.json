@@ -1,6 +1,24 @@
 {
   "hats": [
     {
+      "id": "marigold-3",
+      "name": "Marigold 3",
+      "description": "\ufeffBright! Fun! Cheerful! Makes your day Mari and Gold!",
+      "price": 30,
+      "status": "available",
+      "image": "images/marigold-3.jpg",
+      "folder_name": "Marigold 3"
+    },
+    {
+      "id": "the-rose-rapier",
+      "name": "The Rose Rapier",
+      "description": "\ufeffBlend in with roses! It will blush for you!",
+      "price": 35,
+      "status": "available",
+      "image": "images/the-rose-rapier.jpg",
+      "folder_name": "The Rose Rapier"
+    },
+    {
       "id": "stormy-day-2",
       "name": "Stormy Day 2",
       "description": "\ufeffYou won't even know it is raining (except if the hat gets wet \ud83e\udd2d)",
