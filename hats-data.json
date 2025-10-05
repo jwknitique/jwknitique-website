@@ -1,6 +1,15 @@
 {
   "hats": [
     {
+      "id": "stormy-day",
+      "name": "Stormy Day",
+      "description": "\ufeffGreat to wear on a not so bright day to cheer you up!",
+      "price": 30,
+      "status": "available",
+      "image": "images/stormy-day.jpg",
+      "folder_name": "Stormy Day"
+    },
+    {
       "id": "the-maple",
       "name": "The Maple",
       "description": "\ufeffFor lovers of trees and Maple syrup",
@@ -14,16 +23,16 @@
       "name": "The Husky ",
       "description": "\ufeffGreat for mushing sled dogs! Warm and thick!",
       "price": 30,
-      "status": "available",
+      "status": "sold",
       "image": "images/the-husky-.jpg",
       "folder_name": "The Husky "
     },
     {
       "id": "superman",
       "name": "Superman",
-      "description": "KID SIZE Cozily leap tall buildings in a single bound!",
+      "description": "KID SIZE Cozily leap tall buildings in a single bound! Sold!",
       "price": 20,
-      "status": "available",
+      "status": "sold",
       "image": "images/superman.jpg",
       "folder_name": "Superman"
     },
@@ -32,7 +41,7 @@
       "name": "Snow White",
       "description": "\ufeffKID SIZE soft and warm, watch out for that snowball!",
       "price": 25,
-      "status": "available",
+      "status": "sold",
       "image": "images/snow-white.jpg",
       "folder_name": "Snow White"
     },
@@ -41,7 +50,7 @@
       "name": "Marigold 2",
       "description": "\ufeffSoft and warm for dancing in chilly meadows!",
       "price": 30,
-      "status": "available",
+      "status": "sold",
       "image": "images/marigold-2.jpg",
       "folder_name": "Marigold 2"
     },
