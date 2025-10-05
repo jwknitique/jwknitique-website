@@ -1,6 +1,42 @@
 {
   "hats": [
     {
+      "id": "stormy-day-2",
+      "name": "Stormy Day 2",
+      "description": "\ufeffYou won't even know it is raining (except if the hat gets wet \ud83e\udd2d)",
+      "price": 30,
+      "status": "available",
+      "image": "images/stormy-day-2.jpg",
+      "folder_name": "Stormy Day 2"
+    },
+    {
+      "id": "dusk-2",
+      "name": "Dusk 2",
+      "description": "\ufeffWatch the campfire flicker in comfort!",
+      "price": 30,
+      "status": "available",
+      "image": "images/dusk-2.jpg",
+      "folder_name": "Dusk 2"
+    },
+    {
+      "id": "the-sunshine",
+      "name": "The Sunshine",
+      "description": "\ufeffBrighten up your day: even when the sun isn't shining, you brought your own sun! KID SIZE!",
+      "price": 25,
+      "status": "available",
+      "image": "images/the-sunshine.jpg",
+      "folder_name": "The Sunshine"
+    },
+    {
+      "id": "dusk",
+      "name": "Dusk",
+      "description": "\ufeffA dark color to protect your secret identity!",
+      "price": 30,
+      "status": "available",
+      "image": "images/dusk.jpg",
+      "folder_name": "Dusk"
+    },
+    {
       "id": "stormy-day",
       "name": "Stormy Day",
       "description": "\ufeffGreat to wear on a not so bright day to cheer you up!",
