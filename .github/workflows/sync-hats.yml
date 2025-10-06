@@ -1,9 +1,8 @@
 name: Sync Hats from Google Drive
 
 on:
-  schedule:
-    # Run every hour
-    - cron: '0 * * * *'
+  # schedule:
+  #   - cron: '0 9,21 * * *'  # Comment out for now
   workflow_dispatch:  # Allow manual trigger from GitHub UI
 
 
