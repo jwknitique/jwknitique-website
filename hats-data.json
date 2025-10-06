@@ -66,9 +66,9 @@
     {
       "id": "the-maple",
       "name": "The Maple",
-      "description": "\ufeffFor lovers of trees and Maple syrup",
+      "description": "\ufeffFor lovers of trees and Maple syrup Sold!!!",
       "price": 30,
-      "status": "available",
+      "status": "sold",
       "image": "images/the-maple.jpg",
       "folder_name": "The Maple"
     },
