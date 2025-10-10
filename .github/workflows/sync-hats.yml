@@ -5,12 +5,9 @@ on:
   #   - cron: '0 9,21 * * *'  # Comment out for now
   workflow_dispatch:  # Allow manual trigger from GitHub UI
 
-
 jobs:
   sync-hats:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     
     steps:
       - name: Checkout repository
@@ -23,7 +20,7 @@ jobs:
           
       - name: Install dependencies
         run: |
-          pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+          pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client cloudinary
           
       - name: Create credentials file
         env:
@@ -34,6 +31,9 @@ jobs:
       - name: Run sync script
         env:
           DRIVE_FOLDER_ID: ${{ secrets.DRIVE_FOLDER_ID }}
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
         run: |
           python .github/scripts/sync_hats.py
           
@@ -41,5 +41,5 @@ jobs:
         run: |
           git config --global user.name "Hat Bot"
           git config --global user.email "bot@jwknitique.com"
-          git add images/ hats-data.json
+          git add hats-data.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "Update hats from Google Drive" && git push)

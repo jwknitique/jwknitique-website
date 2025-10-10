@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Sync hat data from Google Drive to GitHub repository.
-Validates hat folders, downloads images, and generates hat data JSON.
+Validates hat folders, uploads images to Cloudinary, and generates hat data JSON.
 """
 
 import os
@@ -13,13 +13,21 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
 import io
+import cloudinary
+import cloudinary.uploader
 
 # Configuration
 SCOPES = ['https://www.googleapis.com/auth/drive.readonly']
 CREDENTIALS_FILE = 'credentials.json'
 DRIVE_FOLDER_ID = os.environ.get('DRIVE_FOLDER_ID')
-IMAGES_DIR = Path('images')
 OUTPUT_FILE = 'hats-data.json'
+
+# Cloudinary configuration
+cloudinary.config(
+    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.environ.get('CLOUDINARY_API_KEY'),
+    api_secret=os.environ.get('CLOUDINARY_API_SECRET')
+)
 
 # Validation
 VALID_IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png']
@@ -47,7 +55,7 @@ def list_folder_contents(service, folder_id):
     return results.get('files', [])
 
 def download_file(service, file_id, destination_path):
-    """Download a file from Google Drive"""
+    """Download a file from Google Drive to memory"""
     request = service.files().get_media(fileId=file_id)
     fh = io.BytesIO()
     downloader = MediaIoBaseDownload(fh, request)
@@ -56,8 +64,22 @@ def download_file(service, file_id, destination_path):
     while not done:
         status, done = downloader.next_chunk()
     
-    with open(destination_path, 'wb') as f:
-        f.write(fh.getvalue())
+    fh.seek(0)  # Reset to beginning for reading
+    return fh
+
+def upload_to_cloudinary(file_data, public_id, folder='jw-knitique-hats'):
+    """Upload image to Cloudinary and return URL"""
+    try:
+        result = cloudinary.uploader.upload(
+            file_data,
+            public_id=public_id,
+            folder=folder,
+            overwrite=True,  # Overwrite if exists (for updates)
+            resource_type='image'
+        )
+        return result['secure_url']
+    except Exception as e:
+        raise Exception(f"Cloudinary upload failed: {str(e)}")
 
 def export_google_doc(service, file_id):
     """Export Google Doc as plain text"""
@@ -192,27 +214,31 @@ def validate_hat_folder(service, folder_name, folder_id):
     except ValueError:
         raise HatValidationError(f"Invalid price '{hat_data['price']}'. Must be a positive number")
     
-    # Download image
+    # Download image to memory and upload to Cloudinary
     image_file = images[0]
     image_extension = Path(image_file['name']).suffix
     
-    # Create safe filename from hat name
+    # Create safe filename from hat name for Cloudinary public_id
     safe_name = hat_data['name'].lower().replace(' ', '-').replace('_', '-')
     safe_name = ''.join(c for c in safe_name if c.isalnum() or c == '-')
-    image_filename = f"{safe_name}{image_extension}"
     
-    IMAGES_DIR.mkdir(exist_ok=True)
-    image_path = IMAGES_DIR / image_filename
-    download_file(service, image_file['id'], image_path)
+    # Download image from Drive
+    print(f"  Downloading image from Drive...")
+    image_data = download_file(service, image_file['id'], None)
     
-    # Return validated hat data
+    # Upload to Cloudinary
+    print(f"  Uploading to Cloudinary...")
+    cloudinary_url = upload_to_cloudinary(image_data, safe_name)
+    print(f"  Cloudinary URL: {cloudinary_url}")
+    
+    # Return validated hat data with Cloudinary URL
     return {
         'id': safe_name,
         'name': hat_data['name'],
         'description': hat_data['description'],
         'price': int(hat_data['price']),
         'status': hat_data['status'].lower(),
-        'image': f'images/{image_filename}',
+        'image': cloudinary_url,  # Cloudinary URL instead of local path
         'folder_name': folder_name
     }
 
