@@ -1,31 +1,13 @@
 {
   "hats": [
     {
-      "id": "marigold-3",
-      "name": "Marigold 3",
-      "description": "\ufeffBright! Fun! Cheerful! Makes your day Mari and Gold!",
+      "id": "dusk",
+      "name": "Dusk",
+      "description": "\ufeffA dark color to protect your secret identity!",
       "price": 30,
       "status": "available",
-      "image": "images/marigold-3.jpg",
-      "folder_name": "Marigold 3"
-    },
-    {
-      "id": "the-rose-rapier",
-      "name": "The Rose Rapier",
-      "description": "\ufeffBlend in with roses! It will blush for you!",
-      "price": 35,
-      "status": "available",
-      "image": "images/the-rose-rapier.jpg",
-      "folder_name": "The Rose Rapier"
-    },
-    {
-      "id": "stormy-day-2",
-      "name": "Stormy Day 2",
-      "description": "\ufeffYou won't even know it is raining (except if the hat gets wet \ud83e\udd2d)",
-      "price": 30,
-      "status": "available",
-      "image": "images/stormy-day-2.jpg",
-      "folder_name": "Stormy Day 2"
+      "image": "https://res.cloudinary.com/dkjdk2wsa/image/upload/v1760062996/jw-knitique-hats/dusk.jpg",
+      "folder_name": "Dusk"
     },
     {
       "id": "dusk-2",
@@ -33,80 +15,8 @@
       "description": "\ufeffWatch the campfire flicker in comfort!",
       "price": 30,
       "status": "available",
-      "image": "images/dusk-2.jpg",
+      "image": "https://res.cloudinary.com/dkjdk2wsa/image/upload/v1760062991/jw-knitique-hats/dusk-2.jpg",
       "folder_name": "Dusk 2"
-    },
-    {
-      "id": "the-sunshine",
-      "name": "The Sunshine",
-      "description": "\ufeffBrighten up your day: even when the sun isn't shining, you brought your own sun! KID SIZE!",
-      "price": 25,
-      "status": "available",
-      "image": "images/the-sunshine.jpg",
-      "folder_name": "The Sunshine"
-    },
-    {
-      "id": "dusk",
-      "name": "Dusk",
-      "description": "\ufeffA dark color to protect your secret identity!",
-      "price": 30,
-      "status": "available",
-      "image": "images/dusk.jpg",
-      "folder_name": "Dusk"
-    },
-    {
-      "id": "stormy-day",
-      "name": "Stormy Day",
-      "description": "\ufeffGreat to wear on a not so bright day to cheer you up!",
-      "price": 30,
-      "status": "available",
-      "image": "images/stormy-day.jpg",
-      "folder_name": "Stormy Day"
-    },
-    {
-      "id": "the-maple",
-      "name": "The Maple",
-      "description": "\ufeffFor lovers of trees and Maple syrup Sold!!!",
-      "price": 30,
-      "status": "sold",
-      "image": "images/the-maple.jpg",
-      "folder_name": "The Maple"
-    },
-    {
-      "id": "the-husky-",
-      "name": "The Husky ",
-      "description": "\ufeffGreat for mushing sled dogs! Warm and thick!",
-      "price": 30,
-      "status": "sold",
-      "image": "images/the-husky-.jpg",
-      "folder_name": "The Husky "
-    },
-    {
-      "id": "superman",
-      "name": "Superman",
-      "description": "KID SIZE Cozily leap tall buildings in a single bound! Sold!",
-      "price": 20,
-      "status": "sold",
-      "image": "images/superman.jpg",
-      "folder_name": "Superman"
-    },
-    {
-      "id": "snow-white",
-      "name": "Snow White",
-      "description": "\ufeffKID SIZE soft and warm, watch out for that snowball!",
-      "price": 25,
-      "status": "sold",
-      "image": "images/snow-white.jpg",
-      "folder_name": "Snow White"
-    },
-    {
-      "id": "marigold-2",
-      "name": "Marigold 2",
-      "description": "\ufeffSoft and warm for dancing in chilly meadows!",
-      "price": 30,
-      "status": "sold",
-      "image": "images/marigold-2.jpg",
-      "folder_name": "Marigold 2"
     },
     {
       "id": "marigold-1",
@@ -114,8 +24,26 @@
       "description": "Soft and warm for dancing in chilly meadows!",
       "price": 30,
       "status": "sold",
-      "image": "images/marigold-1.jpg",
+      "image": "https://res.cloudinary.com/dkjdk2wsa/image/upload/v1760063014/jw-knitique-hats/marigold-1.jpg",
       "folder_name": "Marigold 1"
+    },
+    {
+      "id": "marigold-2",
+      "name": "Marigold 2",
+      "description": "\ufeffSoft and warm for dancing in chilly meadows!",
+      "price": 30,
+      "status": "sold",
+      "image": "https://res.cloudinary.com/dkjdk2wsa/image/upload/v1760063012/jw-knitique-hats/marigold-2.jpg",
+      "folder_name": "Marigold 2"
+    },
+    {
+      "id": "marigold-3",
+      "name": "Marigold 3",
+      "description": "\ufeffBright! Fun! Cheerful! Makes your day Mari and Gold!",
+      "price": 30,
+      "status": "available",
+      "image": "https://res.cloudinary.com/dkjdk2wsa/image/upload/v1760062984/jw-knitique-hats/marigold-3.jpg",
+      "folder_name": "Marigold 3"
     },
     {
       "id": "ruby-cuddler",
@@ -123,8 +51,80 @@
       "description": "KID SIZE tight and heavy woven for lovers of candy apples and cherry pie!",
       "price": 25,
       "status": "available",
-      "image": "images/ruby-cuddler.jpg",
+      "image": "https://res.cloudinary.com/dkjdk2wsa/image/upload/v1760063017/jw-knitique-hats/ruby-cuddler.jpg",
       "folder_name": "Ruby Cuddler"
+    },
+    {
+      "id": "snow-white",
+      "name": "Snow White",
+      "description": "\ufeffKID SIZE soft and warm, watch out for that snowball!",
+      "price": 25,
+      "status": "sold",
+      "image": "https://res.cloudinary.com/dkjdk2wsa/image/upload/v1760063009/jw-knitique-hats/snow-white.jpg",
+      "folder_name": "Snow White"
+    },
+    {
+      "id": "stormy-day",
+      "name": "Stormy Day",
+      "description": "\ufeffGreat to wear on a not so bright day to cheer you up!",
+      "price": 30,
+      "status": "available",
+      "image": "https://res.cloudinary.com/dkjdk2wsa/image/upload/v1760062999/jw-knitique-hats/stormy-day.jpg",
+      "folder_name": "Stormy Day"
+    },
+    {
+      "id": "stormy-day-2",
+      "name": "Stormy Day 2",
+      "description": "\ufeffYou won't even know it is raining (except if the hat gets wet \ud83e\udd2d)",
+      "price": 30,
+      "status": "available",
+      "image": "https://res.cloudinary.com/dkjdk2wsa/image/upload/v1760062988/jw-knitique-hats/stormy-day-2.jpg",
+      "folder_name": "Stormy Day 2"
+    },
+    {
+      "id": "superman",
+      "name": "Superman",
+      "description": "KID SIZE Cozily leap tall buildings in a single bound! Sold!",
+      "price": 20,
+      "status": "sold",
+      "image": "https://res.cloudinary.com/dkjdk2wsa/image/upload/v1760063007/jw-knitique-hats/superman.jpg",
+      "folder_name": "Superman"
+    },
+    {
+      "id": "the-husky-",
+      "name": "The Husky ",
+      "description": "\ufeffGreat for mushing sled dogs! Warm and thick!",
+      "price": 30,
+      "status": "sold",
+      "image": "https://res.cloudinary.com/dkjdk2wsa/image/upload/v1760063004/jw-knitique-hats/the-husky-.jpg",
+      "folder_name": "The Husky "
+    },
+    {
+      "id": "the-maple",
+      "name": "The Maple",
+      "description": "\ufeffFor lovers of trees and Maple syrup Sold!!!",
+      "price": 30,
+      "status": "sold",
+      "image": "https://res.cloudinary.com/dkjdk2wsa/image/upload/v1760063001/jw-knitique-hats/the-maple.jpg",
+      "folder_name": "The Maple"
+    },
+    {
+      "id": "the-rose-rapier",
+      "name": "The Rose Rapier",
+      "description": "\ufeffBlend in with roses! It will blush for you!",
+      "price": 35,
+      "status": "available",
+      "image": "https://res.cloudinary.com/dkjdk2wsa/image/upload/v1760062986/jw-knitique-hats/the-rose-rapier.jpg",
+      "folder_name": "The Rose Rapier"
+    },
+    {
+      "id": "the-sunshine",
+      "name": "The Sunshine",
+      "description": "\ufeffBrighten up your day: even when the sun isn't shining, you brought your own sun! KID SIZE!",
+      "price": 25,
+      "status": "available",
+      "image": "https://res.cloudinary.com/dkjdk2wsa/image/upload/v1760062994/jw-knitique-hats/the-sunshine.jpg",
+      "folder_name": "The Sunshine"
     }
   ],
   "last_sync": null
