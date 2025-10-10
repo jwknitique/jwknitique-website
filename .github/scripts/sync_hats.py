@@ -295,7 +295,7 @@ def main():
     # Write hats data JSON
     with open(OUTPUT_FILE, 'w') as f:
         json.dump({
-            'hats': hats,
+            'hats': sorted(hats, key=lambda x: x['id']),  # Sort by ID for consistent ordering
             'last_sync': None  # Could add timestamp here
         }, f, indent=2)
     
